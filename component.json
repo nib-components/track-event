@@ -1,0 +1,11 @@
+{
+  "name": "track-event",
+  "version": "0.0.1",
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "nib-components/analytics": "0.1.0"
+  }
+}
