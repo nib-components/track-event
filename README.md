@@ -13,17 +13,15 @@ This component is predominantly used to record 'blur' events on form elements. H
 
   The default action is to add an event listener on window.document for the 'blur' event.
 
-
-
   On blur(), send the event ```category``` and properties to ga.
 
-  If the element that has experienced the 'blur' event, we send:
+  If the input is empty we send nthe equivelant of:
 
-  ```gaq('send', 'event', category, 'blur', 'skipped', 'elementName');```
+  ```ga('send', ['event', category, 'skipped', value]);```
 
-  otherwise, if its populated, send:
+  otherwise, if populated we send:
 
-  ```gaq('send', 'event', category, 'blur', 'completed', 'elementName');```
+  ```ga('send', ['event', category, 'completed', value]);```
 
 
 ## Example

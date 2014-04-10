@@ -12,7 +12,6 @@ module.exports = function(category, el, type, capture){
       if (!el.srcElement.value){
         gaq.trackEvent({
           category: evtCat,
-          action: evtType,
           label: 'skipped',
           value: el.srcElement.name
         });
@@ -20,7 +19,6 @@ module.exports = function(category, el, type, capture){
       else {
         gaq.trackEvent({
           category: evtCat,
-          action: evtType,
           label: 'completed',
           value: el.srcElement.name
         });
