@@ -36,7 +36,7 @@ require('track-event')('contact-form');
 var trackEvent = require('track-event');
 var form = document.querySelector('.contact-form');
 trackEvent('contact-form', form, 'click', false);
-// 'Click' vents are scoped to the form element instead of body.
+// 'Click' events are scoped to the form element instead of body.
 ```
 
 ## API
