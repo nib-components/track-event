@@ -45,8 +45,9 @@ trackEvent('contact-form', form, 'click', false);
 
 The category you wish to record the event for.
 
-
-	require('track-event')('contact-form');
+```js
+require('track-event')('contact-form');
+```
 
 This will record the event under 'contact-form'.
 
@@ -72,6 +73,13 @@ Focus and blur events don’t bubble. But they should be captured from the windo
 
 Default: true
 
+##Ignoring inputs
+
+You can ignore specific inputs by adding a class ```js-ignore-track-event```.
+
+```html
+<input type="file" class="js-ignore-track-event"/>
+```
 
 ## License
 

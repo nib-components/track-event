@@ -8,6 +8,8 @@ module.exports = function(category, el, type, capture){
 
   function handler(el){
     var target;
+
+    // set target based on browser support
     if (el.srcElement){
       target = el.srcElement;
     }
@@ -15,19 +17,24 @@ module.exports = function(category, el, type, capture){
       target = el.target;
     }
 
-    if (!target.value){
-      gaq.trackEvent({
-        category: evtCat,
-        label: 'skipped',
-        value: target.name
-      });
-    }
-    else {
-      gaq.trackEvent({
-        category: evtCat,
-        label: 'completed',
-        value: target.name
-      });
+    // if the element isn't ignored
+    if (!target.classList.contains('js-ignore-track-event')){
+      if (!target.value){
+        console.log('skipped');
+        gaq.trackEvent({
+          category: evtCat,
+          label: 'skipped',
+          value: target.name
+        });
+      }
+      else {
+        console.log('completed');
+        gaq.trackEvent({
+          category: evtCat,
+          label: 'completed',
+          value: target.name
+        });
+      }
     }
   }
 
