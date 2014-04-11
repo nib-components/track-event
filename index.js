@@ -7,22 +7,27 @@ module.exports = function(category, el, type, capture){
   var evtCapture = capture || true;
 
   function handler(el){
-    // IE hack - ensure el.srcElement.name isnt undefined
-    if (el.srcElement.name != null){
-      if (!el.srcElement.value){
-        gaq.trackEvent({
-          category: evtCat,
-          label: 'skipped',
-          value: el.srcElement.name
-        });
-      }
-      else {
-        gaq.trackEvent({
-          category: evtCat,
-          label: 'completed',
-          value: el.srcElement.name
-        });
-      }
+    var target;
+    if (el.srcElement){
+      target = el.srcElement;
+    }
+    else {
+      target = el.target;
+    }
+
+    if (!target.value){
+      gaq.trackEvent({
+        category: evtCat,
+        label: 'skipped',
+        value: target.name
+      });
+    }
+    else {
+      gaq.trackEvent({
+        category: evtCat,
+        label: 'completed',
+        value: target.name
+      });
     }
   }
 
