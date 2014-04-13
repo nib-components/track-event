@@ -20,7 +20,6 @@ module.exports = function(category, el, type, capture){
     // if the element isn't ignored
     if (!target.classList.contains('js-ignore-track-event')){
       if (!target.value){
-        console.log('skipped');
         gaq.trackEvent({
           category: evtCat,
           label: 'skipped',
@@ -28,7 +27,6 @@ module.exports = function(category, el, type, capture){
         });
       }
       else {
-        console.log('completed');
         gaq.trackEvent({
           category: evtCat,
           label: 'completed',
