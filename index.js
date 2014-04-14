@@ -17,6 +17,11 @@ module.exports = function(category, el, type, capture){
       target = el.target;
     }
 
+    // ensure its an input
+    if (target.tagName !== "INPUT"){
+      return;
+    }
+
     // if the element isn't ignored
     if (!target.classList.contains('js-ignore-track-event')){
       if (!target.value){
