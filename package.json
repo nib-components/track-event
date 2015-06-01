@@ -1,0 +1,15 @@
+{
+  "name": "@nib-components/track-event",
+  "version": "0.0.3",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nib-components/track-event.git"
+  },
+  "dependencies": {
+    "@nib-components/analytics": "0.2.2"
+  },
+  "browser": {
+    "analytics": "@nib-components/analytics"
+  }
+}
